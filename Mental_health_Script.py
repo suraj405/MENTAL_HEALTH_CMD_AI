@@ -24,16 +24,17 @@ model = genai.GenerativeModel(
 chat = model.start_chat()
 
 # A simple loop for the chat interface
-print("Hello! I'm here to listen. You can share whatever is on your mind. (Type 'exit' to end the conversation)")
+print("Hello! I'm AI of Suraj from 3rd Year M.Tech(CSE) here to listen. You can share whatever is on your mind. (Type 'exit' to end the conversation)")
 
 while True:
     user_input = input("You: ")
     if user_input.lower() == 'exit':
-        print("Goodbye for now. Take care!")
+        print("Goodbye nanba. Take care!")
         break
 
     try:
         response = chat.send_message(user_input)
         print(f"Companion: {response.text}")
     except Exception as e:
+
         print(f"An error occurred: {e}")
