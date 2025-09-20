@@ -1,10 +1,9 @@
 import google.generativeai as genai
 import os
 
-# Set your API key from the environment variable
-genai.configure(api_key="AIzaSyBL0CCbKfWPG2EbY2TM13J_Hg5lBNBTJLo")
+genai.configure(api_key="API")
 
-# Create the model instance with the system prompt
+
 model = genai.GenerativeModel(
     model_name='gemini-1.5-flash',
     system_instruction=(
@@ -18,10 +17,8 @@ model = genai.GenerativeModel(
     )
 )
 
-# Start a chat session
 chat = model.start_chat()
 
-# A simple loop for the chat interface
 print("Hello! I'm here to listen. You can share whatever is on your mind. (Type 'exit' to end the conversation)")
 
 while True:
@@ -34,4 +31,5 @@ while True:
         response = chat.send_message(user_input)
         print(f"Companion: {response.text}")
     except Exception as e:
+
         print(f"An error occurred: {e}")
